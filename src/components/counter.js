@@ -8,10 +8,14 @@ class Counter extends React.Component {
     };
 
     render() { 
+        let classes = "badge m-3 badge-";
+        classes += (this.state.count === 0) ? "warning": "primary";
+
+
         return (
             <div className="m-4" >
                 <img src={ this.state.imageUrl }/>
-                <span style= {{fontSize: 20}} className="badge badge-primary m-3">{ this.formatCount() }</span>
+                <span style= {{fontSize: 20}} className={ classes }>{ this.formatCount() }</span>
                 <button className="btn btn-secondary" >CLICK</button>
             </div>
             );
