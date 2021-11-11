@@ -4,7 +4,7 @@ import React, { Component } from 'react';
 class Counter extends React.Component {
     state = {
         count: 0,
-        imageUrl: 'https:picsum.photos/200',
+        // imageUrl: 'https:picsum.photos/200',
         tags: ['tag1', 'tag2', 'tag3']
     };
 
@@ -15,15 +15,17 @@ class Counter extends React.Component {
     }
 
     handleIncrement = () => {
-        console.log('add button clicked', this);
-    }
+        // console.log('add button clicked', this);
+        this.setState({ count: this.state.count + 1  })
+    };
+
+
 
 
     render() { 
 
         return (
             <div className="m-4" >
-                <img src={ this.state.imageUrl } alt="random pic"/>
                 <span style= {{fontSize: 20}} className={ this.getBadgeClasses() }>{ this.formatCount() }</span>
                 <button onClick={ this.handleIncrement } className="btn btn-secondary" >add</button>
                 <div>
