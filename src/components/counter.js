@@ -14,8 +14,8 @@ class Counter extends React.Component {
         return <ul>{ this.state.tags.map(tag => <li key={tag}>{ tag }</li>)}</ul>;
     }
 
-    handleIncrement() {
-        console.log('add button clicked');
+    handleIncrement = () => {
+        console.log('add button clicked', this);
     }
 
 
