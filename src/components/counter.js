@@ -8,18 +8,22 @@ class Counter extends React.Component {
     };
 
     render() { 
-        let classes = "badge m-3 badge-";
-        classes += (this.state.count === 0) ? "warning": "primary";
 
 
         return (
             <div className="m-4" >
                 <img src={ this.state.imageUrl }/>
-                <span style= {{fontSize: 20}} className={ classes }>{ this.formatCount() }</span>
+                <span style= {{fontSize: 20}} className={ this.getBadgeClasses() }>{ this.formatCount() }</span>
                 <button className="btn btn-secondary" >CLICK</button>
             </div>
             );
     }
+    getBadgeClasses() {
+        let classes = "badge m-3 badge-";
+        classes += this.state.count === 0 ? "warning": "primary";
+        return classes;
+    }
+
     formatCount(){
         const { count } = this.state;
         return count === 0 ? "Zero" : count;
