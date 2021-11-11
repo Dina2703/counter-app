@@ -6,16 +6,12 @@ class Counter extends React.Component {
         count: 0,
         imageUrl: 'https:picsum.photos/200'
     };
-    styles = {
-        fontSize: 20,
-        fontWeight: "bold"
-    };
 
     render() { 
         return (
             <div className="m-4" >
                 <img src={ this.state.imageUrl }/>
-                <span style= {this.styles} className="badge badge-primary m-3">{ this.formatCount() }</span>
+                <span style= {{fontSize: 20}} className="badge badge-primary m-3">{ this.formatCount() }</span>
                 <button className="btn btn-secondary" >CLICK</button>
             </div>
             );
