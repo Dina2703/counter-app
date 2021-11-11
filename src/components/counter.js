@@ -14,14 +14,18 @@ class Counter extends React.Component {
         return <ul>{ this.state.tags.map(tag => <li key={tag}>{ tag }</li>)}</ul>;
     }
 
-    render() { 
+    handleIncrement() {
+        console.log('add button clicked');
+    }
 
+
+    render() { 
 
         return (
             <div className="m-4" >
                 <img src={ this.state.imageUrl } alt="random pic"/>
                 <span style= {{fontSize: 20}} className={ this.getBadgeClasses() }>{ this.formatCount() }</span>
-                <button className="btn btn-secondary" >add</button>
+                <button onClick={ this.handleIncrement } className="btn btn-secondary" >add</button>
                 <div>
                     {this.state.tags.length === 0 && "Please create a new tag!" || "my list"}
                     { this.renderTags()}
